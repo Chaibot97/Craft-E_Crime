@@ -21,5 +21,6 @@ public class CameraOrbit : MonoBehaviour
         offset = Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * -turnSpeed, transform.right) * offset;
         transform.position = player.position + offset;
         transform.LookAt(player.position);
+        //Debug.Log(transform.rotation);
     }
 }

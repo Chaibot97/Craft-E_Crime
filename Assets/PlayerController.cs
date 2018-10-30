@@ -59,25 +59,19 @@ public class PlayerController : MonoBehaviour
             x += 1;
         }
 
-        // calculate move direction to pass to character
-        if (m_Cam != null)
-        {
-            // calculate camera relative direction to move:
-            m_CamForward = Vector3.Scale(m_Cam.forward, new Vector3(1, 0, 1)).normalized;
-            m_Move = z * m_CamForward + x * m_Cam.right;
 
-        }
-        else
-        {
-            // we use world-relative directions in the case of no main camera
-            m_Move = z * Vector3.forward + x * Vector3.right;
-        }
+        // calculate camera relative direction to move:
+        m_CamForward = Vector3.Scale(m_Cam.forward, new Vector3(1, 0, 1)).normalized;
+        m_Move = z * m_CamForward + x * m_Cam.right;
+
+       
+       
 
         // walk speed multiplier
         if (Input.GetKey(KeyCode.LeftShift)) m_Move *= 2f;
-
+        if (Input.GetKey(KeyCode.Space)) m_Jump = true;
         // pass all parameters to the character control script
-        m_Character.Move(m_Move);
+        m_Character.Move(m_Move, new Quaternion(0, m_Cam.transform.rotation.y,0, m_Cam.transform.rotation.w) ,m_Jump);
         m_Jump = false;
     }
 

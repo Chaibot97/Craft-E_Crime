@@ -5,8 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    [SerializeField] float m_MovingTurnSpeed = 180;
-    [SerializeField] float m_StationaryTurnSpeed = 90;
+    [SerializeField] float m_TurnSpeed = 360;
     [SerializeField] float m_JumpPower = 12f; 
 
     [SerializeField] float m_MoveSpeedMultiplier = 3f;
@@ -28,27 +27,30 @@ public class Player : MonoBehaviour
         m_Rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
     }
 
-    public void Move(Vector3 move)
+    public void Move(Vector3 move,Quaternion facing,bool jump)
     {
+        Debug.DrawLine(transform.position + (Vector3.up * 0.1f), transform.position + (Vector3.up * 0.2f) + (transform.forward * 3));
         //Debug.Log(move);
-        // convert the world relative moveInput vector into a local-relative
-        // turn amount and forward amount required to head in the desired
-        // direction.
-        if (move.magnitude > 1f) move.Normalize();
-        move = transform.InverseTransformDirection(move);
-        //CheckGroundStatus();
-        move = Vector3.ProjectOnPlane(move, Vector3.up);
+       
+        var step = m_TurnSpeed * Time.deltaTime;
+        m_Rigidbody.transform.rotation = Quaternion.RotateTowards(transform.rotation, facing, step);
+
         move = move * m_MoveSpeedMultiplier;
         m_ForwardAmount = move.z;
 
-        m_IsGrounded=Physics.Raycast(transform.position + (Vector3.down * 0.4f), Vector3.down, 0.1f);
+
+        m_IsGrounded =Physics.Raycast(transform.position + (Vector3.down * 0.4f), Vector3.down, 0.1f);
 
         if(m_IsGrounded)
         {
-            m_Rigidbody.velocity = move;
+
+            m_Rigidbody.velocity=move;
+            if (jump)
+                m_Rigidbody.AddForce(Vector3.up * m_JumpPower, ForceMode.Impulse);
         }
         else{
-            m_Rigidbody.velocity = move+ Physics.gravity;
+            m_Rigidbody.AddForce(move);
+            m_Rigidbody.AddForce(Physics.gravity);
         }
         //Debug.Log(m_Rigidbody.velocity);
         //UpdateAnimator(move);
