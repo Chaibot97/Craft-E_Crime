@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 m_CamForward;             // The current forward direction of the camera
     private Vector3 m_Move;
     private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
-
+    private bool m_Sprint;
 
     private void Start()
     {
@@ -68,11 +68,12 @@ public class PlayerController : MonoBehaviour
        
 
         // walk speed multiplier
-        if (Input.GetKey(KeyCode.LeftShift)) m_Move *= 2f;
+        if (Input.GetKey(KeyCode.LeftShift)) m_Sprint=true;
         if (Input.GetKey(KeyCode.Space)) m_Jump = true;
         // pass all parameters to the character control script
-        m_Character.Move(m_Move, new Quaternion(0, m_Cam.transform.rotation.y,0, m_Cam.transform.rotation.w) ,m_Jump);
+        m_Character.Move(m_Move, new Quaternion(0, m_Cam.transform.rotation.y,0, m_Cam.transform.rotation.w) ,m_Sprint,m_Jump);
         m_Jump = false;
+        m_Sprint = false;
     }
 
 
