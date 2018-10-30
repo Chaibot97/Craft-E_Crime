@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // walk speed multiplier
-        if (Input.GetKey(KeyCode.LeftShift)) m_Move *= 0.5f;
+        if (Input.GetKey(KeyCode.LeftShift)) m_Move *= 2f;
 
         // pass all parameters to the character control script
         m_Character.Move(m_Move);
