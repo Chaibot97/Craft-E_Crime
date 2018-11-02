@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
         m_Rigidbody.transform.rotation = Quaternion.RotateTowards(transform.rotation, facing, step);
 
         move = move * m_MoveSpeedMultiplier;
-        if (move.magnitude > 5){move = move * (m_MoveSpeedMultiplier/move.magnitude);} //adjust diagonal speed
+        if (move.magnitude > m_MoveSpeedMultiplier){move = move * (m_MoveSpeedMultiplier/move.magnitude);} //adjust diagonal speed
 
         m_IsGrounded =Physics.Raycast(transform.position + (Vector3.down * 0.4f), Vector3.down, 0.1f);
 
