@@ -9,12 +9,17 @@ public class MaterialCollider : MonoBehaviour {
     public Text cdinfo;
     int countdown=0;
 
+    [SerializeField] Image collect;
+
+
+
+
     void OnTriggerEnter(Collider col)
     {
 
         if (col.gameObject.tag == "interactable")
         {
-            Debug.Log(col.gameObject.name);
+            //Debug.Log(col.gameObject.name);
             countdown = m_InteractionTime;
         } 
     }
@@ -25,12 +30,14 @@ public class MaterialCollider : MonoBehaviour {
         {
             if (!(Input.GetKey(KeyCode.E)|| Input.GetKey(KeyCode.Mouse0)))
             {
+                collectDisappear();
                 countdown = m_InteractionTime;
                 if (cdinfo)
                     cdinfo.text = countdown.ToString();
             }
             else if (Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.Mouse0))
             {
+                collect.transform.SetPositionAndRotation(new Vector3(Screen.width * 0.5f, Screen.height * 0.5f, 0), Quaternion.identity);
                 countdown--;
                 cdinfo.text = countdown.ToString();
             }
@@ -38,6 +45,7 @@ public class MaterialCollider : MonoBehaviour {
             //Debug.Log(countdown.ToString());
             if (countdown <= 0)
             {
+                collectDisappear();
                 Destroy(col.gameObject);
             }
 
@@ -45,7 +53,11 @@ public class MaterialCollider : MonoBehaviour {
     }
     void OnTriggerExit(Collider col)
     {
+        collectDisappear();
         countdown = m_InteractionTime;
     }
 
+    void collectDisappear(){
+        collect.transform.SetPositionAndRotation(new Vector3(1000,1000,1000), Quaternion.identity);
+    }
 }

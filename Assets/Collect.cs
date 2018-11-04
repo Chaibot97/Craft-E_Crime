@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Stamina : MonoBehaviour {
+public class Collect : MonoBehaviour {
 
 	[SerializeField] private float fillAmount;
 	[SerializeField] private Image content;
-	[SerializeField] private Text stamina;
+	[SerializeField] private Text countdown;
 
 	int val = 0;
 
@@ -22,7 +22,7 @@ public class Stamina : MonoBehaviour {
 	}
 
 	private void Handle(){
-		int.TryParse(stamina.text, out val);
+		int.TryParse(countdown.text, out val);
 		content.fillAmount = FillerMap(val,0,100);
 	}
 
