@@ -12,14 +12,20 @@ public class CameraOrbit : MonoBehaviour
 
     void Start()
     {
-        offset = new Vector3(player.position.x, player.position.y , player.position.z + 3);
+        offset = new Vector3(player.position.x, player.position.y+0.5f , player.position.z + 3);
     }
 
     void LateUpdate()
     {
         offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * offset;
         offset = Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * -turnSpeed, transform.right) * offset;
-        transform.position = player.position + offset;
+        Vector3 newPostion= player.position + offset;
+        if (newPostion.y >=0.1f)
+        {
+            transform.position = newPostion;
+        }else{
+            transform.position = new Vector3(newPostion.x,0.1f,newPostion.z);
+        }
         transform.LookAt(player.position);
         //Debug.Log(transform.rotation);
     }
