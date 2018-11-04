@@ -6,7 +6,10 @@ TagManager:
   tags:
   - interactable
   - UI
-  - Enemy
+  - interactable1
+  - interactable2
+  - interactable3
+  - interactable4
   layers:
   - Default
   - TransparentFX
