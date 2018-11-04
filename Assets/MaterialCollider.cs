@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class MaterialCollider : MonoBehaviour {
     [SerializeField] int m_InteractionTime = 100;
     public Text cdinfo;
-    int countdown=0;
+    private int countdown=0;
 
     void OnTriggerEnter(Collider col)
     {
@@ -45,7 +45,10 @@ public class MaterialCollider : MonoBehaviour {
     }
     void OnTriggerExit(Collider col)
     {
-        countdown = m_InteractionTime;
+        if (col.gameObject.tag == "interactable")
+        {
+            countdown = m_InteractionTime;
+        }
     }
 
 }
