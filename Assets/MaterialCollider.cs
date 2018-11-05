@@ -21,20 +21,20 @@ public class MaterialCollider : MonoBehaviour {
 
     private void Start(){
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
-        object1.enabled = false;
-        object2.enabled = false;
-        object3.enabled = false;
-        object4.enabled = false;
-        object1.transform.SetAsLastSibling();
-        object2.transform.SetAsLastSibling();
-        object3.transform.SetAsLastSibling();
-        object4.transform.SetAsLastSibling();
+
+       
     }
 
     private void Update(){
+        if (object1) object1.transform.SetAsLastSibling();
+        if (object2) object2.transform.SetAsLastSibling();
+        if (object3) object3.transform.SetAsLastSibling();
+        if (object4) object4.transform.SetAsLastSibling();
+
+
         for (int i = 0; i < inventory.slots.Length; i++){
             t = inventory.slots[i].transform.GetChild(0).GetChild(0).GetComponentInChildren<Text>();
-            if (t) t.text = inventory.quantity[i].ToString();
+            if (t) t.text = inventory.quantity[i].ToString(); 
         }
     }
 

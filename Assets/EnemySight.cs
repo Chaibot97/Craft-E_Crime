@@ -20,15 +20,17 @@ public class EnemySight : MonoBehaviour {
         countdown = m_DetectedTime;
         speed = GetComponent<FollowPath>().Speed;
     }
-    private void Update()
+    private void LateUpdate()
     {
         Vector3 line1 = transform.position + Quaternion.Euler(0, m_FOV*0.5f, 0)*transform.forward*sCol.radius;
         Debug.DrawLine(transform.position, line1, Color.green);
         Vector3 line2 = transform.position + Quaternion.Euler(0, -m_FOV * 0.5f, 0) * transform.forward * sCol.radius;
         Debug.DrawLine(transform.position, line2, Color.green);
-        if (Detectinfo) Detectinfo.text = countdown.ToString();
         if (!seen && countdown < m_DetectedTime)
+        {
             countdown++;
+            Detectinfo.text = countdown.ToString();
+        }
         if (seen)
         {
             GetComponent<FollowPath>().Speed = 0;
@@ -59,8 +61,7 @@ public class EnemySight : MonoBehaviour {
                 }
 
             }
-            if(seen)
-            //Debug.Log(countdown.ToString());
+            Detectinfo.text = countdown.ToString();
             if (countdown <= 0)
             {
                 Debug.Log("gameOver");
