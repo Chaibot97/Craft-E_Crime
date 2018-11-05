@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,6 +11,12 @@ public class PlayerController : MonoBehaviour
     private Vector3 m_Move;
     private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
     private bool m_Sprint;
+
+    [SerializeField] Image shoppinglist;
+    [SerializeField] Image tabshop;
+    [SerializeField] Text tabtext;
+
+    private Text t;
 
     private void Start()
     {
@@ -28,6 +34,10 @@ public class PlayerController : MonoBehaviour
 
         // get the third person character ( this should never be null due to require component )
         m_Character = GetComponent<Player>();
+
+        shoppinglist.enabled = false;
+        tabshop.enabled = true;
+        tabtext.enabled = true;
     }
 
 
@@ -60,6 +70,18 @@ public class PlayerController : MonoBehaviour
                 x += 1;
             }
         }
+
+        if (Input.GetKey(KeyCode.Tab)){
+            shoppinglist.enabled = true;
+            tabshop.enabled = false;
+            tabtext.enabled = false;
+        }
+        else{
+            shoppinglist.enabled = false;
+            tabshop.enabled = true;
+            tabtext.enabled = true;
+        }
+        
 
 
         // calculate camera relative direction to move:

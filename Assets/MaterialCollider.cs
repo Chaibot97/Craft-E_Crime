@@ -32,10 +32,7 @@ public class MaterialCollider : MonoBehaviour {
     }
 
     private void Update(){
-        for (int i = 0; i < inventory.slots.Length; i++){
-            t = inventory.slots[i].transform.GetChild(0).GetChild(0).GetComponentInChildren<Text>();
-            if (t) t.text = inventory.quantity[i].ToString();
-        }
+        
     }
 
 
@@ -122,6 +119,10 @@ public class MaterialCollider : MonoBehaviour {
                 inventory.quantity[i]++;
                 break;
             }
+        }
+        for (int i = 0; i < inventory.slots.Length; i++){
+            t = inventory.slots[i].transform.GetChild(0).GetChild(0).GetComponentInChildren<Text>();
+            if (t) t.text = inventory.quantity[i].ToString();
         }
     }
 }
