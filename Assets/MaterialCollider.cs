@@ -73,8 +73,11 @@ public class MaterialCollider : MonoBehaviour {
     }
     void OnTriggerExit(Collider col)
     {
-        Disappear(collect);
-        countdown = m_InteractionTime;
+        if (col.gameObject.tag.Contains("interactable"))
+        {
+            Disappear(collect);
+            countdown = m_InteractionTime;
+        }
     }
 
     void Disappear(Image img){
