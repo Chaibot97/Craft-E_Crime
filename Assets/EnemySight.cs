@@ -13,6 +13,7 @@ public class EnemySight : MonoBehaviour {
     private bool seen = false;
     private int countdown = 0;
     private float speed;
+
     private void Awake()
     {
         sCol = GetComponent<SphereCollider>();
@@ -35,6 +36,7 @@ public class EnemySight : MonoBehaviour {
         }else{
             GetComponent<FollowPath>().Speed = speed;
         }
+
     }
   
     void OnTriggerStay(Collider col)
