@@ -6,6 +6,10 @@ TagManager:
   tags:
   - interactable
   - UI
+  - interactable1
+  - interactable2
+  - interactable3
+  - interactable4
   - Enemy
   layers:
   - Default

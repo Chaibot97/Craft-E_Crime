@@ -43,20 +43,22 @@ public class PlayerController : MonoBehaviour
         // read inputs
         float z = 0;
         float x = 0;
-        if(Input.GetKey(KeyCode.W)){
-            z += 1;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            z -= 1;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            x -= 1;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            x += 1;
+        if (!Input.GetKey(KeyCode.E)){
+            if(Input.GetKey(KeyCode.W)){
+                z += 1;
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                z -= 1;
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                x -= 1;
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                x += 1;
+            }
         }
 
 
