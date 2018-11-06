@@ -1,0 +1,180 @@
+fileFormatVersion: 2
+guid: 531eaad20f8174dd5b53c43831876b95
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Door_bevel
+    100002: Door_bevel_2
+    100004: Door_bevel_3
+    100006: Door_bevel_4
+    100008: Door_bevel_5
+    100010: Door_bevel_6
+    100012: Door_frame_left
+    100014: Door_frame_right
+    100016: Door_frame_top
+    100018: Door_knob
+    100020: Large_box
+    100022: Large_box2
+    100024: Large_box3
+    100026: Light
+    100028: Light1
+    100030: Medium_box
+    100032: Medium_box2
+    100034: Medium_box_3
+    100036: Room
+    100038: //RootNode
+    100040: Room1
+    100042: Small_box
+    100044: Small_box2
+    100046: transform21
+    100048: transform22
+    100050: transform23
+    100052: transform24
+    100054: transform25
+    100056: transform26
+    100058: transform27
+    100060: transform28
+    100062: transform29
+    100064: transform30
+    100066: transform31
+    100068: transform32
+    100070: transform33
+    100072: transform34
+    100074: transform35
+    100076: transform36
+    100078: transform37
+    100080: transform38
+    100082: transform39
+    100084: transform40
+    100086: transform41
+    400000: Door_bevel
+    400002: Door_bevel_2
+    400004: Door_bevel_3
+    400006: Door_bevel_4
+    400008: Door_bevel_5
+    400010: Door_bevel_6
+    400012: Door_frame_left
+    400014: Door_frame_right
+    400016: Door_frame_top
+    400018: Door_knob
+    400020: Large_box
+    400022: Large_box2
+    400024: Large_box3
+    400026: Light
+    400028: Light1
+    400030: Medium_box
+    400032: Medium_box2
+    400034: Medium_box_3
+    400036: //RootNode
+    400038: Room
+    400040: Room1
+    400042: Small_box
+    400044: Small_box2
+    400046: transform21
+    400048: transform22
+    400050: transform23
+    400052: transform24
+    400054: transform25
+    400056: transform26
+    400058: transform27
+    400060: transform28
+    400062: transform29
+    400064: transform30
+    400066: transform31
+    400068: transform32
+    400070: transform33
+    400072: transform34
+    400074: transform35
+    400076: transform36
+    400078: transform37
+    400080: transform38
+    400082: transform39
+    400084: transform40
+    400086: transform41
+    2100000: lambert1
+    2300000: Light1
+    3300000: Light1
+    4300000: Light1
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
