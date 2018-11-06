@@ -18,11 +18,10 @@ public class MaterialCollider : MonoBehaviour {
     public Image object4;
 
     private Text t;
+    public Text prompt;
 
     private void Start(){
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
-
-       
     }
 
     private void Update(){
@@ -40,7 +39,9 @@ public class MaterialCollider : MonoBehaviour {
         {
             //Debug.Log(col.gameObject.name);
             countdown = m_InteractionTime;
-        } 
+            //prompt.text = "Hold E to interact.";
+            prompt.enabled = true;
+        }
     }
     void OnTriggerStay(Collider col)
     {
@@ -67,6 +68,7 @@ public class MaterialCollider : MonoBehaviour {
                 Disappear(collect);
                 addToInventory(col.gameObject);
                 Destroy(col.gameObject);
+                prompt.enabled = false;
             }
 
         }
@@ -77,9 +79,10 @@ public class MaterialCollider : MonoBehaviour {
         {
             Disappear(collect);
             countdown = m_InteractionTime;
+            prompt.enabled = false;
         }
     }
-
+    
     void Disappear(Image img){
         img.transform.SetPositionAndRotation(new Vector3(1000,1000,1000), Quaternion.identity);
     }
