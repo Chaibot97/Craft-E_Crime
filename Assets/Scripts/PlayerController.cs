@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] Image shoppinglist;
     [SerializeField] Image tabshop;
-    [SerializeField] Text tabtext;
 
     private Text t;
 
@@ -37,7 +36,6 @@ public class PlayerController : MonoBehaviour
 
         shoppinglist.enabled = false;
         tabshop.enabled = true;
-        tabtext.enabled = true;
     }
 
 
@@ -74,12 +72,10 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.Tab)){
             shoppinglist.enabled = true;
             tabshop.enabled = false;
-            tabtext.enabled = false;
         }
         else{
             shoppinglist.enabled = false;
             tabshop.enabled = true;
-            tabtext.enabled = true;
         }
         
 
