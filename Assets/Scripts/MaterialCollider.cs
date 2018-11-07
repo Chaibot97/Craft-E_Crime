@@ -22,13 +22,14 @@ public class MaterialCollider : MonoBehaviour {
 
     private void Start(){
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
-    }
-
-    private void Update(){
         if (object1) object1.transform.SetAsLastSibling();
         if (object2) object2.transform.SetAsLastSibling();
         if (object3) object3.transform.SetAsLastSibling();
         if (object4) object4.transform.SetAsLastSibling();
+    }
+
+    private void Update(){
+        
     }
 
 
