@@ -9,6 +9,8 @@ public class MaterialCollider : MonoBehaviour {
     public Text cdinfo;
     int countdown=0;
 
+    private bool inCraft;
+
     [SerializeField] Image collect;
     [SerializeField] Image crafting;
 
@@ -45,6 +47,8 @@ public class MaterialCollider : MonoBehaviour {
         if (product5) product5.transform.SetAsLastSibling();
         if (product6) product6.transform.SetAsLastSibling();
         if (product7) product7.transform.SetAsLastSibling();
+
+        inCraft = false;
     }
 
     private void Update(){
@@ -55,18 +59,21 @@ public class MaterialCollider : MonoBehaviour {
     void OnTriggerEnter(Collider col)
     {
 
-        if (col.gameObject.tag.Contains("interactable") || col.gameObject.tag.Contains("crafting"))
+        if (col.gameObject.tag.Contains("interactable"))
         {
             //Debug.Log(col.gameObject.name);
             countdown = m_InteractionTime;
             //prompt.text = "Hold E to interact.";
             prompt.enabled = true;
         }
+        else if (col.gameObject.tag.Contains("crafting")){
+            crafting.enabled = true;
+        }
     }
     void OnTriggerStay(Collider col)
     {
 
-        if (col.gameObject.tag.Contains("interactable") || col.gameObject.tag.Contains("crafting"))
+        if (col.gameObject.tag.Contains("interactable"))
         {
             if (!(Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.Mouse0)))
             {
@@ -85,14 +92,8 @@ public class MaterialCollider : MonoBehaviour {
             //Debug.Log(countdown.ToString());
             if (countdown <= 0)
             {
-                if (col.gameObject.tag.Contains("interactable")){ //add material to inventory
-                    addToInventory(col.gameObject);
-                    Destroy(col.gameObject);
-                }
-                else if (col.gameObject.tag.Contains("crafting")){ //open crafting ui
-                    //TODO
-                    crafting.enabled = true;
-                }
+                addToInventory(col.gameObject);
+                Destroy(col.gameObject);
                 Disappear(collect);
                 prompt.enabled = false;
             }
@@ -107,6 +108,9 @@ public class MaterialCollider : MonoBehaviour {
             Disappear(collect);
             countdown = m_InteractionTime;
             prompt.enabled = false;
+        }
+        if (col.gameObject.tag.Contains("crafting")){
+            crafting.enabled = false;
         }
     }
     
