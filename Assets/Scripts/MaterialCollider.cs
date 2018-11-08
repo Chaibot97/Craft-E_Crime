@@ -10,6 +10,7 @@ public class MaterialCollider : MonoBehaviour {
     int countdown=0;
 
     [SerializeField] Image collect;
+    [SerializeField] Image crafting;
 
     private Inventory inventory;
     public Image object1;
@@ -47,14 +48,14 @@ public class MaterialCollider : MonoBehaviour {
     }
 
     private void Update(){
-        
+        if (crafting) crafting.transform.SetAsLastSibling();
     }
 
 
     void OnTriggerEnter(Collider col)
     {
 
-        if (col.gameObject.tag.Contains("interactable"))
+        if (col.gameObject.tag.Contains("interactable") || col.gameObject.tag.Contains("crafting"))
         {
             //Debug.Log(col.gameObject.name);
             countdown = m_InteractionTime;
@@ -65,7 +66,7 @@ public class MaterialCollider : MonoBehaviour {
     void OnTriggerStay(Collider col)
     {
 
-        if (col.gameObject.tag.Contains("interactable"))
+        if (col.gameObject.tag.Contains("interactable") || col.gameObject.tag.Contains("crafting"))
         {
             if (!(Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.Mouse0)))
             {
@@ -84,14 +85,21 @@ public class MaterialCollider : MonoBehaviour {
             //Debug.Log(countdown.ToString());
             if (countdown <= 0)
             {
+                if (col.gameObject.tag.Contains("interactable")){ //add material to inventory
+                    addToInventory(col.gameObject);
+                    Destroy(col.gameObject);
+                }
+                else if (col.gameObject.tag.Contains("crafting")){ //open crafting ui
+                    //TODO
+                    crafting.enabled = true;
+                }
                 Disappear(collect);
-                addToInventory(col.gameObject);
-                Destroy(col.gameObject);
                 prompt.enabled = false;
             }
 
         }
     }
+
     void OnTriggerExit(Collider col)
     {
         if (col.gameObject.tag.Contains("interactable"))
