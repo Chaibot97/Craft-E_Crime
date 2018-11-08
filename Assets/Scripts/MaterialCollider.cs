@@ -21,7 +21,7 @@ public class MaterialCollider : MonoBehaviour {
     public Text prompt;
 
     private void Start(){
-        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        inventory = GetComponent<Inventory>();
         if (object1) object1.transform.SetAsLastSibling();
         if (object2) object2.transform.SetAsLastSibling();
         if (object3) object3.transform.SetAsLastSibling();
