@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -64,7 +65,7 @@ public class EnemySight : MonoBehaviour {
             Detectinfo.text = countdown.ToString();
             if (countdown <= 0)
             {
-                Debug.Log("gameOver");
+                SceneManager.LoadScene("GameOver");
             }
 
         }
