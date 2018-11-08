@@ -1,2 +1,9 @@
-Etsy crime
-Discord: https://discord.gg/9k8zF9
+  ________________
+< I'm an Etsy cow. >
+  ----------------
+         \   ^__^ 
+          \  (oo)\_______
+             (__)\       )\/\
+                 ||----w |
+                 ||     ||
+    
