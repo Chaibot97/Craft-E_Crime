@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -891,7 +891,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.03, y: 0.02, z: 0.01}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.01, y: 0, z: 0}
 --- !u!1 &185022093
 GameObject:
   m_ObjectHideFlags: 0
@@ -2805,7 +2805,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.03, y: 0.02, z: 0.01}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.01, y: 0, z: 0}
 --- !u!1 &538088485 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1728346464488866, guid: 6d16383d7c9eedd408a2751a2a21ae49,
@@ -3638,7 +3638,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.03, y: 0.02, z: 0.01}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.01, y: 0, z: 0}
 --- !u!1001 &632709170
 Prefab:
   m_ObjectHideFlags: 0
@@ -3689,6 +3689,29 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7b12c7b5a49bac42ab77754e95bae36, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &637743351 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1034042258282600, guid: cda8b3ad785eb4e4e82482727244aca5,
+    type: 2}
+  m_PrefabInternal: {fileID: 936710277}
+--- !u!95 &637743356
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 637743351}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 529edb05c98ab4f7bad499108375a49a, type: 3}
+  m_Controller: {fileID: 9100000, guid: 1dc232b0c487efb42a0e88058ef5ec30, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &641819954 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1339423993891148, guid: 191f5eb28ef724243a80a84f34f48c7d,
@@ -4077,7 +4100,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.03, y: 0.02, z: 0.01}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.01, y: 0, z: 0}
 --- !u!1001 &676860563
 Prefab:
   m_ObjectHideFlags: 0
@@ -4134,6 +4157,29 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9ad506f1c9905b4a9fcbd00c73246c1, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &687276337 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1034042258282600, guid: cda8b3ad785eb4e4e82482727244aca5,
+    type: 2}
+  m_PrefabInternal: {fileID: 19335508}
+--- !u!95 &687276342
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 687276337}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 529edb05c98ab4f7bad499108375a49a, type: 3}
+  m_Controller: {fileID: 9100000, guid: 1dc232b0c487efb42a0e88058ef5ec30, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &692210830
 Prefab:
   m_ObjectHideFlags: 0
@@ -4371,7 +4417,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.03, y: 0.02, z: 0.01}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.01, y: 0, z: 0}
 --- !u!1 &778430962
 GameObject:
   m_ObjectHideFlags: 0
@@ -4489,7 +4535,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 779364039}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.82, y: 1.0946206, z: -9.44}
+  m_LocalPosition: {x: -13.82, y: 0.76, z: -9.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1144524680}
@@ -5675,7 +5721,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.03, y: 0.02, z: 0.01}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.01, y: 0, z: 0}
 --- !u!1 &972122437 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1339423993891148, guid: 191f5eb28ef724243a80a84f34f48c7d,
@@ -5765,7 +5811,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   MyPath: {fileID: 779364040}
-  Speed: 2
+  Speed: 1.5
   MaxDistanceToGoal: 0.1
 --- !u!95 &975115807
 Animator:
@@ -5774,7 +5820,7 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 975115802}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 9000000, guid: 529edb05c98ab4f7bad499108375a49a, type: 3}
   m_Controller: {fileID: 9100000, guid: 1dc232b0c487efb42a0e88058ef5ec30, type: 2}
   m_CullingMode: 0
@@ -6260,7 +6306,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.03, y: 0.02, z: 0.01}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.01, y: 0, z: 0}
 --- !u!1001 &1045962020
 Prefab:
   m_ObjectHideFlags: 0
@@ -6500,7 +6546,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.03, y: 0.02, z: 0.01}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.01, y: 0, z: 0}
 --- !u!1001 &1055782497
 Prefab:
   m_ObjectHideFlags: 0
@@ -7365,7 +7411,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.03, y: 0.02, z: 0.01}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.01, y: 0, z: 0}
 --- !u!1001 &1190000154
 Prefab:
   m_ObjectHideFlags: 0
@@ -8117,7 +8163,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1330815666}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.28, y: 1.0946206, z: 0.11}
+  m_LocalPosition: {x: -1.28, y: 0.76, z: 0.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1120937089}
@@ -8434,7 +8480,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.03, y: 0.02, z: 0.01}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.01, y: 0, z: 0}
 --- !u!1 &1381642591
 GameObject:
   m_ObjectHideFlags: 0
@@ -8948,7 +8994,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.03, y: 0.02, z: 0.01}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.01, y: 0, z: 0}
 --- !u!1001 &1479607893
 Prefab:
   m_ObjectHideFlags: 0
@@ -9663,12 +9709,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TurnSpeed: 360
   m_JumpPower: 0
-  m_MoveSpeedMultiplier: 5
+  m_MoveSpeedMultiplier: 3.5
   m_SprintSpeedMultiplier: 1.5
   m_MaxStamina: 100
   staminaInfo: {fileID: 820695990}
   speedInfo: {fileID: 1969880082}
-  m_StepInterval: 2.5
+  m_StepInterval: 2.3
   m_FootstepSounds:
   - {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
   - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
@@ -9833,7 +9879,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.03, y: 0.02, z: 0.01}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.01, y: 0, z: 0}
 --- !u!1 &1598086211
 GameObject:
   m_ObjectHideFlags: 0
@@ -11172,7 +11218,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.03, y: 0.02, z: 0.01}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.01, y: 0, z: 0}
 --- !u!1001 &1820091158
 Prefab:
   m_ObjectHideFlags: 0
@@ -12184,7 +12230,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.03, y: 0.02, z: 0.01}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.01, y: 0, z: 0}
 --- !u!1 &1979826400
 GameObject:
   m_ObjectHideFlags: 0
@@ -12818,7 +12864,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   MyPath: {fileID: 1330815668}
-  Speed: 2
+  Speed: 1.8
   MaxDistanceToGoal: 0.1
 --- !u!4 &2035129064
 Transform:
@@ -12841,7 +12887,7 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2035129060}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 9000000, guid: 529edb05c98ab4f7bad499108375a49a, type: 3}
   m_Controller: {fileID: 9100000, guid: 1dc232b0c487efb42a0e88058ef5ec30, type: 2}
   m_CullingMode: 0
