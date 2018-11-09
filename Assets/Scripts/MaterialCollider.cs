@@ -560,5 +560,17 @@ public class MaterialCollider : MonoBehaviour {
             profit += value*inventory2.quantity[i];
         }
         score.text = "Score: $" + profit.ToString();
+
+        product1.enabled = false;
+        product2.enabled = false;
+        product3.enabled = false;
+        product4.enabled = false;
+        product5.enabled = false;
+        product6.enabled = false;
+        product7.enabled = false;
+        object1.enabled = false;
+        object2.enabled = false;
+        object3.enabled = false;
+        object4.enabled = false;
     }
 }
