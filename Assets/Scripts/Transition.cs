@@ -29,7 +29,7 @@ public class Transition : MonoBehaviour {
             time--;
             c.a = time / duration;
             mask.color=c;
-            Debug.Log(time);
+            //Debug.Log(time);
         }
         if(time<=0){
             mask.enabled = false;

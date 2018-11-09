@@ -56,7 +56,7 @@ public class EnemySight : MonoBehaviour {
                         seen = true;
                         if(countdown>0)
                             countdown--;
-                        Debug.Log("seen");
+                        //Debug.Log("seen");
 
                     }
                 }
