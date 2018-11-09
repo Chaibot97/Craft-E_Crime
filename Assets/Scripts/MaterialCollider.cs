@@ -447,8 +447,73 @@ public class MaterialCollider : MonoBehaviour {
         }
     }
 
-    void Craft(){
-        //TODO
+    public void Craft(){
+        int a = inventoryC.filled[0];
+        int b = inventoryC.filled[1];
+        int x = inventoryC.quantity[0];
+        int y = inventoryC.quantity[1];
+
+        if (a == 4 && b == 1){ //product 3
+            inventoryC.quantity[0] -= 2;
+            inventoryC.quantity[1] -= 1;
+            addToInventory2(3);
+        }
+        if (a == 1 && b == 4){ //product 3
+            inventoryC.quantity[0] -= 1;
+            inventoryC.quantity[1] -= 2;
+            addToInventory2(3);
+        }
+        if (a == 1 && b == 3){ //product 6
+            inventoryC.quantity[0] -= 3;
+            inventoryC.quantity[1] -= 1;
+            addToInventory2(6);
+        }
+        if (a == 3 && b == 1){ //product 6
+            inventoryC.quantity[0] -= 1;
+            inventoryC.quantity[1] -= 3;
+            addToInventory2(6);
+        }
+        if (a == 3 && b == 4){ //product 4
+            inventoryC.quantity[0] -= 2;
+            inventoryC.quantity[1] -= 1;
+            addToInventory2(4);
+        }
+        if (a == 4 && b == 3){ //product 4
+            inventoryC.quantity[0] -= 1;
+            inventoryC.quantity[1] -= 2;
+            addToInventory2(4);
+        }
+        if (a == 2 && b == 3){ //product 5
+            inventoryC.quantity[0] -= 4;
+            inventoryC.quantity[1] -= 1;
+            addToInventory2(5);
+        }
+        if (a == 3 && b == 2){ //product 5
+            inventoryC.quantity[0] -= 1;
+            inventoryC.quantity[1] -= 4;
+            addToInventory2(5);
+        }
+        if ((a == 2 && b == 4) || (a == 4 && b == 2)){ //product 7
+            inventoryC.quantity[0] -= 1;
+            inventoryC.quantity[1] -= 1;
+            addToInventory2(7);
+        }
+        if ((a == 1 && b == 2) || (a == 2 && b == 1)){ //product 2
+            inventoryC.quantity[0] -= 2;
+            inventoryC.quantity[1] -= 2;
+            addToInventory2(2);
+        }
+        inventoryC.quantity[2]--;
+
+        //update text
+        for (int i = 0; i < inventoryC.slots.Length; i++){
+            t = inventoryC.slots[i].transform.GetChild(0).GetChild(0).GetComponentInChildren<Text>();
+            if (t) t.text = inventoryC.quantity[i].ToString();
+        }
+        for (int i = 0; i < inventory.slots.Length; i++){
+            t = inventory.slots[i].transform.GetChild(0).GetChild(0).GetComponentInChildren<Text>();
+            if (t) t.text = inventory.quantity[i].ToString();
+        }
     }
 
     void EnableCrafting(bool b){
