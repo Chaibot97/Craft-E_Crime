@@ -8,6 +8,7 @@ public class MaterialCollider : MonoBehaviour {
     [SerializeField] int m_InteractionTime = 100;
     public Text cdinfo;
     int countdown=0;
+    bool isCrafting;
 
     [SerializeField] Image collect;
 
@@ -49,16 +50,17 @@ public class MaterialCollider : MonoBehaviour {
         if (product6) product6.transform.SetAsLastSibling();
         if (product7) product7.transform.SetAsLastSibling();
 
+        if (crafting) crafting.transform.SetAsLastSibling();
+        if (craftbutton) craftbutton.transform.SetAsLastSibling();
+
         inventoryC = GetComponent<InventoryC>();
         EnableCrafting(false);
     }
 
     private void Update(){
-        if (crafting) crafting.transform.SetAsLastSibling();
-        if (craftbutton) craftbutton.transform.SetAsLastSibling();
 
-        if (crafting){
-            //TODO
+        if (isCrafting){ //remember to set product/material as last sibling
+            if (Input.GetKey(KeyCode.Alpha1)){ addToInventoryC(1); }
         }
     }
 
@@ -251,11 +253,55 @@ public class MaterialCollider : MonoBehaviour {
         }
     }
 
+    void addToInventoryC(int key){
+        for (int i = 0; i < inventoryC.slots.Length-1; i++){
+            if (inventoryC.filled[i] == 0 && inventory.filled[key-1] != 0){ //empty and inventory is filled
+                inventoryC.filled[i] = inventory.filled[key-1];
+                inventoryC.quantity[i] = inventory.quantity[key-1];
+                if (inventory.filled[key-1] == 1){
+                    object1.transform.position = inventoryC.slots[i].transform.position;
+                    if (object1) object1.transform.SetAsLastSibling();
+                }
+                if (inventory.filled[key-1] == 2){
+                    object2.transform.position = inventoryC.slots[i].transform.position;
+                    if (object2) object2.transform.SetAsLastSibling();
+                }
+                if (inventory.filled[key-1] == 3){
+                    object3.transform.position = inventoryC.slots[i].transform.position;
+                    if (object3) object3.transform.SetAsLastSibling();
+                }
+                if (inventory.filled[key-1] == 4){
+                    object4.transform.position = inventoryC.slots[i].transform.position;
+                    if (object4) object4.transform.SetAsLastSibling();
+                }
+                inventory.filled[key-1] = 0;
+                inventory.quantity[key-1] = 0;
+                break;
+            }
+        }
+        for (int i = 0; i < inventoryC.slots.Length-1; i++){
+            t = inventoryC.slots[i].transform.GetChild(0).GetChild(0).GetComponentInChildren<Text>();
+            if (t) t.text = inventoryC.quantity[i].ToString();
+        }
+
+        //determine product
+        
+    }
+
+    void ResetCrafting(){
+        //TODO
+    }
+
+    void Craft(){
+        //TODO
+    }
+
     void EnableCrafting(bool b){
         if (crafting) crafting.enabled = b;
         for (int i = 0; i < inventoryC.slots.Length; i++){
             inventoryC.slots[i].SetActive(b);
         }
         craftbutton.SetActive(b);
+        isCrafting = b;
     }
 }
