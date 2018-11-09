@@ -469,51 +469,61 @@ public class MaterialCollider : MonoBehaviour {
         int b = inventoryC.filled[1];
 
         if (a == 4 && b == 1){ //product 3
+            if (inventoryC.quantity[0] - 2 < 0 || inventoryC.quantity[1] - 1 < 0) return;
             inventoryC.quantity[0] -= 2;
             inventoryC.quantity[1] -= 1;
             addToInventory2(3);
         }
         if (a == 1 && b == 4){ //product 3
+            if (inventoryC.quantity[0] - 1 < 0 || inventoryC.quantity[1] - 2 < 0) return;
             inventoryC.quantity[0] -= 1;
             inventoryC.quantity[1] -= 2;
             addToInventory2(3);
         }
         if (a == 1 && b == 3){ //product 6
+            if (inventoryC.quantity[0] - 3 < 0 || inventoryC.quantity[1] - 1 < 0) return;
             inventoryC.quantity[0] -= 3;
             inventoryC.quantity[1] -= 1;
             addToInventory2(6);
         }
         if (a == 3 && b == 1){ //product 6
+            if (inventoryC.quantity[0] - 1 < 0 || inventoryC.quantity[1] - 3 < 0) return;
             inventoryC.quantity[0] -= 1;
             inventoryC.quantity[1] -= 3;
             addToInventory2(6);
         }
         if (a == 3 && b == 4){ //product 4
+            if (inventoryC.quantity[0] - 2 < 0 || inventoryC.quantity[1] - 1 < 0) return;
             inventoryC.quantity[0] -= 2;
             inventoryC.quantity[1] -= 1;
             addToInventory2(4);
         }
         if (a == 4 && b == 3){ //product 4
+            if (inventoryC.quantity[0] - 1 < 0 || inventoryC.quantity[1] - 2 < 0) return;
             inventoryC.quantity[0] -= 1;
             inventoryC.quantity[1] -= 2;
             addToInventory2(4);
         }
         if (a == 2 && b == 3){ //product 5
+            if (inventoryC.quantity[0] - 4 < 0 || inventoryC.quantity[1] - 1 < 0) return;
             inventoryC.quantity[0] -= 4;
             inventoryC.quantity[1] -= 1;
             addToInventory2(5);
         }
         if (a == 3 && b == 2){ //product 5
+            if (inventoryC.quantity[0] - 1 < 0 || inventoryC.quantity[1] - 4 < 0) return;
             inventoryC.quantity[0] -= 1;
             inventoryC.quantity[1] -= 4;
             addToInventory2(5);
         }
         if ((a == 2 && b == 4) || (a == 4 && b == 2)){ //product 7
+            if (inventoryC.quantity[0] - 1 < 0 || inventoryC.quantity[1] - 1 < 0) return;
             inventoryC.quantity[0] -= 1;
             inventoryC.quantity[1] -= 1;
             addToInventory2(7);
         }
         if ((a == 1 && b == 2) || (a == 2 && b == 1)){ //product 2
+            if (inventoryC.quantity[0] - 2 < 0 || inventoryC.quantity[1] - 2 < 0) return;
             inventoryC.quantity[0] -= 2;
             inventoryC.quantity[1] -= 2;
             addToInventory2(2);
