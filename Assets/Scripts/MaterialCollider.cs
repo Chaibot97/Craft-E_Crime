@@ -66,7 +66,7 @@ public class MaterialCollider : MonoBehaviour {
     void OnTriggerEnter(Collider col)
     {
 
-        if (col.gameObject.tag.Contains("interactable"))
+        if (col.gameObject.tag.Contains("interactable")|| col.gameObject.tag.Contains("Store"))
         {
             //Debug.Log(col.gameObject.name);
             countdown = m_InteractionTime;
@@ -105,17 +105,43 @@ public class MaterialCollider : MonoBehaviour {
                 prompt.enabled = false;
             }
 
+        }else
+        if (col.gameObject.tag.Contains("Store"))
+        {
+            if (!(Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.Mouse0)))
+            {
+                Disappear(collect);
+                countdown = m_InteractionTime;
+                if (cdinfo)
+                    cdinfo.text = countdown.ToString();
+            }
+            else if (Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.Mouse0))
+            {
+                collect.transform.SetPositionAndRotation(new Vector3(Screen.width * 0.5f, Screen.height * 0.5f, 0), Quaternion.identity);
+                countdown--;
+                cdinfo.text = countdown.ToString();
+            }
+
+            //Debug.Log(countdown.ToString());
+            if (countdown <= 0)
+            {
+                transform.position = GameObject.Find("CraftingCoords").transform.position;
+                GameObject.Find("Canvas").GetComponent<Transition>().putMask();
+                prompt.enabled = false;
+                Disappear(collect);
+            }
         }
-    }
+
+        }
 
     void OnTriggerExit(Collider col)
     {
-        if (col.gameObject.tag.Contains("interactable"))
+        if (col.gameObject.tag.Contains("interactable")|| col.gameObject.tag.Contains("Store"))
         {
             Disappear(collect);
             countdown = m_InteractionTime;
             prompt.enabled = false;
-        }
+        }else
         if (col.gameObject.tag.Contains("crafting")){
             EnableCrafting(false);
         }

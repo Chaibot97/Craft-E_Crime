@@ -79,7 +79,7 @@ public class Player : MonoBehaviour
         //}
         //else{
             //m_Rigidbody.AddForce(move);
-            //m_Rigidbody.AddForce(Physics.gravity);
+         m_Rigidbody.AddForce(Physics.gravity);
         //}
         staminaInfo.text = stamina.ToString();
         m_ForwardAmount = move.magnitude;
