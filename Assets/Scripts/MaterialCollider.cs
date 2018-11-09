@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class MaterialCollider : MonoBehaviour {
     [SerializeField] int m_InteractionTime = 100;
     public Text cdinfo;
+    public Text score;
     int countdown=0;
     bool isCrafting;
 
@@ -44,6 +45,7 @@ public class MaterialCollider : MonoBehaviour {
 
     private Text t;
     public Text prompt;
+    
 
     [SerializeField] AudioClip takeItem;
     [SerializeField] AudioClip teleport;
@@ -81,6 +83,7 @@ public class MaterialCollider : MonoBehaviour {
 
         restartbutton.SetActive(false);
         winner.enabled = false;
+        score.enabled = false;
     }
 
     private void Update(){
@@ -462,8 +465,6 @@ public class MaterialCollider : MonoBehaviour {
     public void Craft(){
         int a = inventoryC.filled[0];
         int b = inventoryC.filled[1];
-        int x = inventoryC.quantity[0];
-        int y = inventoryC.quantity[1];
 
         if (a == 4 && b == 1){ //product 3
             inventoryC.quantity[0] -= 2;
@@ -540,8 +541,24 @@ public class MaterialCollider : MonoBehaviour {
     }
 
     void EndGame(){
-        if (winner) winner.enabled = true;
+        winner.enabled = true;
         restartbutton.SetActive(true);
         Cursor.visible = true;
+        score.enabled = true;
+
+        //calculate profit
+        int profit = 0;
+        for (int i = 0; i < inventory2.slots.Length; i++){
+            int value = 0;
+            int product = inventory2.filled[i];
+            if (product == 3){ value = 10; }
+            if (product == 6){ value = 20; }
+            if (product == 4){ value = 10; }
+            if (product == 5){ value = 30; }
+            if (product == 7){ value = 5; }
+            if (product == 2){ value = 20; }
+            profit += value*inventory2.quantity[i];
+        }
+        score.text = "Score: $" + profit.ToString();
     }
 }

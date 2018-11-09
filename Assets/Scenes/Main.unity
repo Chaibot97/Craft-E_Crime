@@ -1589,6 +1589,81 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 384964472}
   m_CullTransparentMesh: 0
+--- !u!1 &385178043
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 385178044}
+  - component: {fileID: 385178046}
+  - component: {fileID: 385178045}
+  m_Layer: 5
+  m_Name: Score
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &385178044
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 385178043}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1973522059}
+  m_RootOrder: 34
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 100, y: -20}
+  m_SizeDelta: {x: 500, y: 200}
+  m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &385178045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 385178043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.14150941, g: 0.13817193, b: 0.13817193, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 50
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 50
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Score: 500'
+--- !u!222 &385178046
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 385178043}
+  m_CullTransparentMesh: 0
 --- !u!1 &385692127
 GameObject:
   m_ObjectHideFlags: 0
@@ -3111,7 +3186,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 910712874}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -5278,6 +5353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionTime: 100
   cdinfo: {fileID: 1416174032}
+  score: {fileID: 0}
   collect: {fileID: 132104461}
   object1: {fileID: 31642426}
   object2: {fileID: 297277535}
@@ -6904,13 +6980,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e65982a9f1164c8e891444fac9ef9ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  filled: 00000000000000000000000000000000
+  filled: 04000000030000000200000001000000
   slots:
   - {fileID: 417737797}
   - {fileID: 1241562938}
   - {fileID: 825602591}
   - {fileID: 2087952571}
-  quantity: 00000000000000000000000000000000
+  quantity: 0a0000000c0000001700000004000000
 --- !u!114 &1747565085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6961,6 +7037,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionTime: 100
   cdinfo: {fileID: 1416174032}
+  score: {fileID: 385178045}
   collect: {fileID: 132104461}
   object1: {fileID: 31642426}
   object2: {fileID: 297277535}
@@ -8103,6 +8180,7 @@ RectTransform:
   - {fileID: 970526629}
   - {fileID: 910712878}
   - {fileID: 45899017}
+  - {fileID: 385178044}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8412,6 +8490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionTime: 100
   cdinfo: {fileID: 1416174032}
+  score: {fileID: 0}
   collect: {fileID: 132104461}
   object1: {fileID: 31642426}
   object2: {fileID: 297277535}
