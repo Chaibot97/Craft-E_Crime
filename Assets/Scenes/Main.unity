@@ -857,8 +857,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnSpeed: 4
   player: {fileID: 1747565082}
-  off: {x: 0, y: 2, z: 3}
-  centerOffset: 0.3
+  off: {x: 0, y: 3, z: 2}
+  centerOffset: 0.8
 --- !u!20 &282840813
 Camera:
   m_ObjectHideFlags: 0
@@ -5344,15 +5344,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400298, guid: b6d2349462b584a34915882047cf4823, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.056343086
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400298, guid: b6d2349462b584a34915882047cf4823, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.7693744
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400298, guid: b6d2349462b584a34915882047cf4823, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.67602444
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400298, guid: b6d2349462b584a34915882047cf4823, type: 3}
       propertyPath: m_LocalRotation.x
@@ -6285,7 +6285,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1747565081}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.043656915, y: 1.0443743, z: -3.1881876}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1426987402}
@@ -6489,7 +6489,7 @@ MonoBehaviour:
   m_MaxStamina: 100
   staminaInfo: {fileID: 819205762}
   speedInfo: {fileID: 346226547}
-  m_StepInterval: 2.3
+  m_StepInterval: 2.5
   m_FootstepSounds:
   - {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
   - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
@@ -6519,7 +6519,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.6040685, y: 1.5633794, z: 0.5229099}
-  m_Center: {x: 0.079407245, y: -0.15267485, z: -0.59180987}
+  m_Center: {x: 0, y: 0.8, z: 0}
 --- !u!54 &1747565091
 Rigidbody:
   m_ObjectHideFlags: 0
