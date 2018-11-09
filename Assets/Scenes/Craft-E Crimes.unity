@@ -782,6 +782,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnSpeed: 4
   player: {fileID: 1299030021}
+  off: {x: 0, y: 0, z: 0}
 --- !u!20 &282840813
 Camera:
   m_ObjectHideFlags: 0
@@ -1685,15 +1686,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400190, guid: c87a7ad060e3b49c0abe0ddc47819cb9, type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 400190, guid: c87a7ad060e3b49c0abe0ddc47819cb9, type: 3}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 400190, guid: c87a7ad060e3b49c0abe0ddc47819cb9, type: 3}
       propertyPath: m_LocalScale.z
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 100190, guid: c87a7ad060e3b49c0abe0ddc47819cb9, type: 3}
       propertyPath: m_Name
@@ -3903,6 +3904,7 @@ MonoBehaviour:
   product5: {fileID: 1540523381}
   product6: {fileID: 1497507679}
   product7: {fileID: 1900492027}
+  crafting: {fileID: 0}
   prompt: {fileID: 1341739646}
 --- !u!114 &1299030027
 MonoBehaviour:
@@ -3966,8 +3968,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.025045753, y: 0.030037511, z: 0.029941393}
-  m_Center: {x: 0, y: 0.01, z: 0}
+  m_Size: {x: 0.025045753, y: 0.04, z: 0.029941393}
+  m_Center: {x: 0, y: 0.02, z: 0}
 --- !u!1 &1330815666
 GameObject:
   m_ObjectHideFlags: 0
@@ -6401,6 +6403,7 @@ MonoBehaviour:
   product5: {fileID: 0}
   product6: {fileID: 0}
   product7: {fileID: 0}
+  crafting: {fileID: 0}
   prompt: {fileID: 0}
 --- !u!1 &1987013566
 GameObject:
@@ -6670,6 +6673,7 @@ MonoBehaviour:
   product5: {fileID: 1540523381}
   product6: {fileID: 1497507679}
   product7: {fileID: 1900492027}
+  crafting: {fileID: 0}
   prompt: {fileID: 1341739646}
 --- !u!114 &1990465487
 MonoBehaviour:
@@ -6955,6 +6959,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: ccb33b307e09a4446bcdf2312fc22720, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: faa55b0825d820147a4f1f3b519a3c5b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccb33b307e09a4446bcdf2312fc22720, type: 3}
   m_IsPrefabAsset: 0
