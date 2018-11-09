@@ -72,7 +72,7 @@ public class Player : MonoBehaviour
 
             m_Rigidbody.velocity=move;
             ProgressStepCycle(move.magnitude);
-            Debug.Log(m_Rigidbody.velocity);
+            //Debug.Log(m_Rigidbody.velocity);
 
             if (jump)
                 m_Rigidbody.AddForce(Vector3.up * m_JumpPower, ForceMode.Impulse);

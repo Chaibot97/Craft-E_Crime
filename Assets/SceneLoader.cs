@@ -7,7 +7,10 @@ public class SceneLoader : MonoBehaviour {
 
     public void LoadScene(String level)
     {
+        if (level != "Main")
+            Cursor.visible = true;
+        else
+            Cursor.visible = false;
         SceneManager.LoadScene(level);
-        Debug.Log(level);
     }
 }
