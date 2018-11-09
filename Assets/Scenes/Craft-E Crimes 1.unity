@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -305,7 +305,8 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 95371955643062332, guid: cda8b3ad785eb4e4e82482727244aca5, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: cda8b3ad785eb4e4e82482727244aca5, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &30827597 stripped
@@ -5503,7 +5504,8 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 95371955643062332, guid: cda8b3ad785eb4e4e82482727244aca5, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: cda8b3ad785eb4e4e82482727244aca5, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &946114555
@@ -5702,6 +5704,7 @@ GameObject:
   - component: {fileID: 975115806}
   - component: {fileID: 975115805}
   - component: {fileID: 975115804}
+  - component: {fileID: 975115807}
   m_Layer: 0
   m_Name: Worker2
   m_TagString: Enemy
@@ -5764,6 +5767,24 @@ MonoBehaviour:
   MyPath: {fileID: 779364040}
   Speed: 2
   MaxDistanceToGoal: 0.1
+--- !u!95 &975115807
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 975115802}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 529edb05c98ab4f7bad499108375a49a, type: 3}
+  m_Controller: {fileID: 9100000, guid: 1dc232b0c487efb42a0e88058ef5ec30, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &997103034
 GameObject:
   m_ObjectHideFlags: 0
@@ -12750,6 +12771,7 @@ GameObject:
   - component: {fileID: 2035129063}
   - component: {fileID: 2035129062}
   - component: {fileID: 2035129061}
+  - component: {fileID: 2035129065}
   m_Layer: 0
   m_Name: Worker1
   m_TagString: Enemy
@@ -12812,6 +12834,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &2035129065
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2035129060}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 529edb05c98ab4f7bad499108375a49a, type: 3}
+  m_Controller: {fileID: 9100000, guid: 1dc232b0c487efb42a0e88058ef5ec30, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &2036718057
 Prefab:
   m_ObjectHideFlags: 0
