@@ -8,6 +8,7 @@ public class CameraOrbit : MonoBehaviour
     public float turnSpeed = 4.0f;
     public Transform player;
     public Vector3 off;
+    public float centerOffset;
     private Vector3 offset;
 
     void Start()
@@ -26,7 +27,7 @@ public class CameraOrbit : MonoBehaviour
         }else{
             transform.position = new Vector3(newPostion.x,0.1f,newPostion.z);
         }
-        transform.LookAt(player.position+transform.up.normalized*0.8f);
+        transform.LookAt(player.position+transform.up.normalized* centerOffset);
         //Debug.Log(transform.rotation);
     }
 }

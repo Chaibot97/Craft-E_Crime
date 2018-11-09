@@ -101,6 +101,70 @@ ModelImporter:
     100190: topnurbsSquare1
     100192: Uwaist
     100194: //RootNode
+    100196: b_b_Character1_Head
+    100198: b_b_Character1_Hips
+    100200: b_b_Character1_LeftArm
+    100202: b_b_Character1_LeftFoot
+    100204: b_b_Character1_LeftForeArm
+    100206: b_b_Character1_LeftHand
+    100208: b_b_Character1_LeftHandIndex1
+    100210: b_b_Character1_LeftHandIndex2
+    100212: b_b_Character1_LeftHandIndex3
+    100214: b_b_Character1_LeftHandIndex4
+    100216: b_b_Character1_LeftHandMiddle1
+    100218: b_b_Character1_LeftHandMiddle2
+    100220: b_b_Character1_LeftHandMiddle3
+    100222: b_b_Character1_LeftHandMiddle4
+    100224: b_b_Character1_LeftHandPinky1
+    100226: b_b_Character1_LeftHandPinky2
+    100228: b_b_Character1_LeftHandPinky3
+    100230: b_b_Character1_LeftHandPinky4
+    100232: b_b_Character1_LeftHandRing1
+    100234: b_b_Character1_LeftHandRing2
+    100236: b_b_Character1_LeftHandRing3
+    100238: b_b_Character1_LeftHandRing4
+    100240: b_b_Character1_LeftHandThumb1
+    100242: b_b_Character1_LeftHandThumb2
+    100244: b_b_Character1_LeftHandThumb3
+    100246: b_b_Character1_LeftHandThumb4
+    100248: b_b_Character1_LeftLeg
+    100250: b_b_Character1_LeftShoulder
+    100252: b_b_Character1_LeftToeBase
+    100254: b_b_Character1_LeftUpLeg
+    100256: b_b_Character1_Neck
+    100258: b_b_Character1_Reference
+    100260: b_b_Character1_RightArm
+    100262: b_b_Character1_RightFoot
+    100264: b_b_Character1_RightForeArm
+    100266: b_b_Character1_RightHand
+    100268: b_b_Character1_RightHandIndex1
+    100270: b_b_Character1_RightHandIndex2
+    100272: b_b_Character1_RightHandIndex3
+    100274: b_b_Character1_RightHandIndex4
+    100276: b_b_Character1_RightHandMiddle1
+    100278: b_b_Character1_RightHandMiddle2
+    100280: b_b_Character1_RightHandMiddle3
+    100282: b_b_Character1_RightHandMiddle4
+    100284: b_b_Character1_RightHandPinky1
+    100286: b_b_Character1_RightHandPinky2
+    100288: b_b_Character1_RightHandPinky3
+    100290: b_b_Character1_RightHandPinky4
+    100292: b_b_Character1_RightHandRing1
+    100294: b_b_Character1_RightHandRing2
+    100296: b_b_Character1_RightHandRing3
+    100298: b_b_Character1_RightHandRing4
+    100300: b_b_Character1_RightHandThumb1
+    100302: b_b_Character1_RightHandThumb2
+    100304: b_b_Character1_RightHandThumb3
+    100306: b_b_Character1_RightHandThumb4
+    100308: b_b_Character1_RightLeg
+    100310: b_b_Character1_RightShoulder
+    100312: b_b_Character1_RightToeBase
+    100314: b_b_Character1_RightUpLeg
+    100316: b_b_Character1_Spine
+    100318: b_b_Character1_Spine1
+    100320: b_b_Character1_Spine2
+    100322: group1
     400000: bottomnurbsSquare1
     400002: chest
     400004: corecontrol
@@ -199,6 +263,70 @@ ModelImporter:
     400190: topnurbsSquare1
     400192: Uwaist
     400194: //RootNode
+    400196: b_b_Character1_Head
+    400198: b_b_Character1_Hips
+    400200: b_b_Character1_LeftArm
+    400202: b_b_Character1_LeftFoot
+    400204: b_b_Character1_LeftForeArm
+    400206: b_b_Character1_LeftHand
+    400208: b_b_Character1_LeftHandIndex1
+    400210: b_b_Character1_LeftHandIndex2
+    400212: b_b_Character1_LeftHandIndex3
+    400214: b_b_Character1_LeftHandIndex4
+    400216: b_b_Character1_LeftHandMiddle1
+    400218: b_b_Character1_LeftHandMiddle2
+    400220: b_b_Character1_LeftHandMiddle3
+    400222: b_b_Character1_LeftHandMiddle4
+    400224: b_b_Character1_LeftHandPinky1
+    400226: b_b_Character1_LeftHandPinky2
+    400228: b_b_Character1_LeftHandPinky3
+    400230: b_b_Character1_LeftHandPinky4
+    400232: b_b_Character1_LeftHandRing1
+    400234: b_b_Character1_LeftHandRing2
+    400236: b_b_Character1_LeftHandRing3
+    400238: b_b_Character1_LeftHandRing4
+    400240: b_b_Character1_LeftHandThumb1
+    400242: b_b_Character1_LeftHandThumb2
+    400244: b_b_Character1_LeftHandThumb3
+    400246: b_b_Character1_LeftHandThumb4
+    400248: b_b_Character1_LeftLeg
+    400250: b_b_Character1_LeftShoulder
+    400252: b_b_Character1_LeftToeBase
+    400254: b_b_Character1_LeftUpLeg
+    400256: b_b_Character1_Neck
+    400258: b_b_Character1_Reference
+    400260: b_b_Character1_RightArm
+    400262: b_b_Character1_RightFoot
+    400264: b_b_Character1_RightForeArm
+    400266: b_b_Character1_RightHand
+    400268: b_b_Character1_RightHandIndex1
+    400270: b_b_Character1_RightHandIndex2
+    400272: b_b_Character1_RightHandIndex3
+    400274: b_b_Character1_RightHandIndex4
+    400276: b_b_Character1_RightHandMiddle1
+    400278: b_b_Character1_RightHandMiddle2
+    400280: b_b_Character1_RightHandMiddle3
+    400282: b_b_Character1_RightHandMiddle4
+    400284: b_b_Character1_RightHandPinky1
+    400286: b_b_Character1_RightHandPinky2
+    400288: b_b_Character1_RightHandPinky3
+    400290: b_b_Character1_RightHandPinky4
+    400292: b_b_Character1_RightHandRing1
+    400294: b_b_Character1_RightHandRing2
+    400296: b_b_Character1_RightHandRing3
+    400298: b_b_Character1_RightHandRing4
+    400300: b_b_Character1_RightHandThumb1
+    400302: b_b_Character1_RightHandThumb2
+    400304: b_b_Character1_RightHandThumb3
+    400306: b_b_Character1_RightHandThumb4
+    400308: b_b_Character1_RightLeg
+    400310: b_b_Character1_RightShoulder
+    400312: b_b_Character1_RightToeBase
+    400314: b_b_Character1_RightUpLeg
+    400316: b_b_Character1_Spine
+    400318: b_b_Character1_Spine1
+    400320: b_b_Character1_Spine2
+    400322: group1
     2100000: lambert1
     2300000: hat
     2300002: pCube10
