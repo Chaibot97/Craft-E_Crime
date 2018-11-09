@@ -523,6 +523,7 @@ public class MaterialCollider : MonoBehaviour {
         }
         craftbutton.SetActive(b);
         isCrafting = b;
+        Cursor.visible = b;
         if (!b){ ResetCrafting(); }
     }
 }
