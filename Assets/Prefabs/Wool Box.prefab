@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 33399228582136706}
   - component: {fileID: 23405512291817878}
   - component: {fileID: 95364520079613320}
-  - component: {fileID: 54886947806209080}
-  - component: {fileID: 65748058310881920}
+  - component: {fileID: 65586238591869048}
+  - component: {fileID: 54786797306444530}
   m_Layer: 0
   m_Name: Wool Box
   m_TagString: Untagged
@@ -39,7 +39,7 @@ Transform:
   m_GameObject: {fileID: 1523255187541230}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.932, y: 0.866, z: -0.701}
-  m_LocalScale: {x: 24, y: 24, z: 24}
+  m_LocalScale: {x: 16, y: 16, z: 16}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -86,7 +86,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1523255187541230}
   m_Mesh: {fileID: 4300000, guid: e7b51384da35342cd9a7469f9fdfd55d, type: 3}
---- !u!54 &54886947806209080
+--- !u!54 &54786797306444530
 Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -101,7 +101,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65748058310881920
+--- !u!65 &65586238591869048
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}

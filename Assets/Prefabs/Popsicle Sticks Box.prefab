@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4816516950380702}
   - component: {fileID: 33755523634777398}
   - component: {fileID: 23576238359501170}
-  - component: {fileID: 54798769588180816}
-  - component: {fileID: 65313423740845442}
+  - component: {fileID: 65034421993360810}
+  - component: {fileID: 54616903678494808}
   m_Layer: 0
   m_Name: Popsicle Sticks Box
   m_TagString: Untagged
@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1428921410578694}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.095, y: 0.888, z: 0.215}
+  m_LocalPosition: {x: 4.032, y: 0.888, z: 0.214}
   m_LocalScale: {x: 16, y: 16, z: 16}
   m_Children: []
   m_Father: {fileID: 0}
@@ -85,7 +85,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1428921410578694}
   m_Mesh: {fileID: 4300000, guid: 08acb743d8ab543438b40d28e59176c1, type: 3}
---- !u!54 &54798769588180816
+--- !u!54 &54616903678494808
 Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -100,7 +100,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65313423740845442
+--- !u!65 &65034421993360810
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
