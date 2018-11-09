@@ -46,7 +46,6 @@ public class Player : MonoBehaviour
     public void Move(Vector3 move,Quaternion facing,bool sprint,bool jump)
     {
         Debug.DrawLine(transform.position + (Vector3.up * 0.1f), transform.position + (Vector3.up * 0.2f) + (transform.forward * 3));
-        //Debug.Log(move);
        
         var step = m_TurnSpeed * Time.deltaTime;
         m_Rigidbody.transform.rotation = Quaternion.RotateTowards(transform.rotation, facing, step);
@@ -65,19 +64,23 @@ public class Player : MonoBehaviour
             stamina++;
             //Debug.Log(stamina);
         }
+        m_Rigidbody.velocity = move;
+        ProgressStepCycle(move.magnitude);
+        //Debug.Log(m_Rigidbody.velocity);
+        //if (m_IsGrounded)
+        //{
 
-        if(m_IsGrounded)
-        {
+        //    m_Rigidbody.velocity=move;
+        //    ProgressStepCycle(move.magnitude);
+        //    Debug.Log(m_Rigidbody.velocity);
 
-            m_Rigidbody.velocity=move;
-            ProgressStepCycle(move.magnitude);
-            if (jump)
-                m_Rigidbody.AddForce(Vector3.up * m_JumpPower, ForceMode.Impulse);
-        }
-        else{
-            m_Rigidbody.AddForce(move);
-            m_Rigidbody.AddForce(Physics.gravity);
-        }
+        //    if (jump)
+        //        m_Rigidbody.AddForce(Vector3.up * m_JumpPower, ForceMode.Impulse);
+        //}
+        //else{
+            //m_Rigidbody.AddForce(move);
+            //m_Rigidbody.AddForce(Physics.gravity);
+        //}
         staminaInfo.text = stamina.ToString();
         m_ForwardAmount = move.magnitude;
         speedInfo.text = m_ForwardAmount.ToString();
