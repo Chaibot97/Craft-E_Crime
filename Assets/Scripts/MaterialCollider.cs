@@ -43,6 +43,8 @@ public class MaterialCollider : MonoBehaviour {
     public Text prompt;
     [SerializeField] AudioClip takeItem;
     [SerializeField] AudioClip teleport;
+
+
     private void Start(){
         inventory = GetComponent<Inventory>();
         if (object1) object1.transform.SetAsLastSibling();
@@ -76,7 +78,7 @@ public class MaterialCollider : MonoBehaviour {
 
     private void Update(){
 
-        if (isCrafting){ //remember to set product/material as last sibling
+        if (isCrafting){
             if (Input.GetKey(KeyCode.Alpha1)){ addToInventoryC(1); }
             if (Input.GetKey(KeyCode.Alpha2)){ addToInventoryC(2); }
             if (Input.GetKey(KeyCode.Alpha3)){ addToInventoryC(3); }
@@ -165,8 +167,8 @@ public class MaterialCollider : MonoBehaviour {
             Disappear(collect);
             countdown = m_InteractionTime;
             prompt.enabled = false;
-        }else
-        if (col.gameObject.tag.Contains("crafting")){
+        }
+        else if (col.gameObject.tag.Contains("crafting")){
             EnableCrafting(false);
         }
     }
@@ -210,6 +212,7 @@ public class MaterialCollider : MonoBehaviour {
                 break;
             }
         }
+        //update text
         for (int i = 0; i < inventory.slots.Length; i++){
             t = inventory.slots[i].transform.GetChild(0).GetChild(0).GetComponentInChildren<Text>();
             if (t) t.text = inventory.quantity[i].ToString();
@@ -269,6 +272,7 @@ public class MaterialCollider : MonoBehaviour {
                 break;
             }
         }
+        //update text
         for (int i = 0; i < inventory2.slots.Length; i++){
             t = inventory2.slots[i].transform.GetChild(0).GetChild(0).GetComponentInChildren<Text>();
             if (t) t.text = inventory2.quantity[i].ToString();
@@ -369,11 +373,14 @@ public class MaterialCollider : MonoBehaviour {
             inventoryC.quantity[2] = DetermineQuantity(x,y,2,2);
         }
 
-
         //update text
         for (int i = 0; i < inventoryC.slots.Length; i++){
             t = inventoryC.slots[i].transform.GetChild(0).GetChild(0).GetComponentInChildren<Text>();
             if (t) t.text = inventoryC.quantity[i].ToString();
+        }
+        for (int i = 0; i < inventory.slots.Length; i++){
+            t = inventory.slots[i].transform.GetChild(0).GetChild(0).GetComponentInChildren<Text>();
+            if (t) t.text = inventory.quantity[i].ToString();
         }
     }
 
@@ -388,7 +395,56 @@ public class MaterialCollider : MonoBehaviour {
     }
 
     void ResetCrafting(){
-        //TODO
+        for (int j = 0; j < 2; j++){
+            for (int i = 0; i < inventory.slots.Length; i++){
+                if (inventory.filled[i] == 0 && inventoryC.filled[j] != 0){ //empty and inventoryC is filled
+                    if (inventoryC.filled[j] == 1){
+                        inventory.filled[i] = 1;
+                        object1.transform.position = inventory.slots[i].transform.position;
+                        inventory.quantity[i] = inventoryC.quantity[j];
+                    }
+                    if (inventoryC.filled[j] == 2){
+                        inventory.filled[i] = 2;
+                        object2.transform.position = inventory.slots[i].transform.position;
+                        inventory.quantity[i] = inventoryC.quantity[j];
+                    }
+                    if (inventoryC.filled[j] == 3){
+                        inventory.filled[i] = 3;
+                        object3.transform.position = inventory.slots[i].transform.position;
+                        inventory.quantity[i] = inventoryC.quantity[j];
+                    }
+                    if (inventoryC.filled[j] == 4){
+                        inventory.filled[i] = 4;
+                        object4.transform.position = inventory.slots[i].transform.position;
+                        inventory.quantity[i] = inventoryC.quantity[j];
+                    }
+                    inventoryC.filled[j] = 0;
+                    inventoryC.quantity[j] = 0;
+                    break;
+                }
+            }
+        }
+
+        //remove product images
+        product11.enabled = false;
+        product21.enabled = false;
+        product31.enabled = false;
+        product41.enabled = false;
+        product51.enabled = false;
+        product61.enabled = false;
+        product71.enabled = false;
+        inventoryC.filled[2] = 0;
+        inventoryC.quantity[2] = 0;
+
+        //update text
+        for (int i = 0; i < inventoryC.slots.Length; i++){
+            t = inventoryC.slots[i].transform.GetChild(0).GetChild(0).GetComponentInChildren<Text>();
+            if (t) t.text = inventoryC.quantity[i].ToString();
+        }
+        for (int i = 0; i < inventory.slots.Length; i++){
+            t = inventory.slots[i].transform.GetChild(0).GetChild(0).GetComponentInChildren<Text>();
+            if (t) t.text = inventory.quantity[i].ToString();
+        }
     }
 
     void Craft(){
@@ -402,5 +458,6 @@ public class MaterialCollider : MonoBehaviour {
         }
         craftbutton.SetActive(b);
         isCrafting = b;
+        if (!b){ ResetCrafting(); }
     }
 }
