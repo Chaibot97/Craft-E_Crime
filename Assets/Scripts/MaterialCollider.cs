@@ -515,7 +515,7 @@ public class MaterialCollider : MonoBehaviour {
             inventoryC.quantity[1] -= 2;
             addToInventory2(2);
         }
-        inventoryC.quantity[2]--;
+        if (inventoryC.quantity[2] > 0) inventoryC.quantity[2]--;
 
         //update text
         for (int i = 0; i < inventoryC.slots.Length; i++){
