@@ -66,6 +66,7 @@ public class EnemySight : MonoBehaviour {
             if (countdown <= 0)
             {
                 SceneManager.LoadScene("GameOver");
+                Cursor.visible = true;
             }
 
         }
