@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
 
     public void Move(Vector3 move,Quaternion facing,bool sprint,bool jump)
     {
-        Debug.DrawLine(transform.position + (Vector3.up * 0.1f), transform.position + (Vector3.up * 0.2f) + (transform.forward * 3));
+        Debug.DrawLine(transform.position + (Vector3.up * 0.2f), transform.position + (Vector3.up * 0.2f) + (transform.forward * 3));
        
         var step = m_TurnSpeed * Time.deltaTime;
         m_Rigidbody.transform.rotation = Quaternion.RotateTowards(transform.rotation, facing, step);
@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
         move = move * m_MoveSpeedMultiplier;
         if (move.magnitude > m_MoveSpeedMultiplier){move = move * (m_MoveSpeedMultiplier/move.magnitude);} //adjust diagonal speed
 
-        m_IsGrounded =Physics.Raycast(transform.position + (Vector3.down * 0.4f), Vector3.down, 0.1f);
+        m_IsGrounded =Physics.Raycast(transform.position + (Vector3.up * 0.1f), Vector3.down, 0.3f);
 
         if(sprint&&stamina>0){
             stamina--;
@@ -64,23 +64,23 @@ public class Player : MonoBehaviour
             stamina++;
             //Debug.Log(stamina);
         }
-        m_Rigidbody.velocity = move;
-        ProgressStepCycle(move.magnitude);
+        //m_Rigidbody.velocity = move;
+        //ProgressStepCycle(move.magnitude);
         //Debug.Log(m_Rigidbody.velocity);
-        //if (m_IsGrounded)
-        //{
+        if (m_IsGrounded)
+        {
 
-        //    m_Rigidbody.velocity=move;
-        //    ProgressStepCycle(move.magnitude);
-        //    Debug.Log(m_Rigidbody.velocity);
+            m_Rigidbody.velocity=move;
+            ProgressStepCycle(move.magnitude);
+            Debug.Log(m_Rigidbody.velocity);
 
-        //    if (jump)
-        //        m_Rigidbody.AddForce(Vector3.up * m_JumpPower, ForceMode.Impulse);
-        //}
-        //else{
-            //m_Rigidbody.AddForce(move);
+            if (jump)
+                m_Rigidbody.AddForce(Vector3.up * m_JumpPower, ForceMode.Impulse);
+        }
+        else{
+            m_Rigidbody.AddForce(move);
          m_Rigidbody.AddForce(Physics.gravity);
-        //}
+        }
         staminaInfo.text = stamina.ToString();
         m_ForwardAmount = move.magnitude;
         speedInfo.text = m_ForwardAmount.ToString();
