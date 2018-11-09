@@ -31,6 +31,14 @@ public class MaterialCollider : MonoBehaviour {
     private InventoryC inventoryC;
     public GameObject craftbutton;
 
+    public Image product11;
+    public Image product21;
+    public Image product31;
+    public Image product41;
+    public Image product51;
+    public Image product61;
+    public Image product71;
+
     private Text t;
     public Text prompt;
 
@@ -53,6 +61,14 @@ public class MaterialCollider : MonoBehaviour {
         if (crafting) crafting.transform.SetAsLastSibling();
         if (craftbutton) craftbutton.transform.SetAsLastSibling();
 
+        if (product11) product11.transform.SetAsLastSibling();
+        if (product21) product21.transform.SetAsLastSibling();
+        if (product31) product31.transform.SetAsLastSibling();
+        if (product41) product41.transform.SetAsLastSibling();
+        if (product51) product51.transform.SetAsLastSibling();
+        if (product61) product61.transform.SetAsLastSibling();
+        if (product71) product71.transform.SetAsLastSibling();
+
         inventoryC = GetComponent<InventoryC>();
         EnableCrafting(false);
     }
@@ -61,6 +77,9 @@ public class MaterialCollider : MonoBehaviour {
 
         if (isCrafting){ //remember to set product/material as last sibling
             if (Input.GetKey(KeyCode.Alpha1)){ addToInventoryC(1); }
+            if (Input.GetKey(KeyCode.Alpha2)){ addToInventoryC(2); }
+            if (Input.GetKey(KeyCode.Alpha3)){ addToInventoryC(3); }
+            if (Input.GetKey(KeyCode.Alpha4)){ addToInventoryC(4); }
         }
     }
 
@@ -279,13 +298,90 @@ public class MaterialCollider : MonoBehaviour {
                 break;
             }
         }
-        for (int i = 0; i < inventoryC.slots.Length-1; i++){
+
+        //determine product
+        int a = inventoryC.filled[0];
+        int b = inventoryC.filled[1];
+        int x = inventoryC.quantity[0];
+        int y = inventoryC.quantity[1];
+
+        if (a == 4 && b == 1){ //product 3
+            inventoryC.filled[2] = 3;
+            product31.enabled = true;
+            product31.transform.position = inventoryC.slots[2].transform.position;
+            inventoryC.quantity[2] = DetermineQuantity(x,y,2,1);
+        }
+        if (a == 1 && b == 4){ //product 3
+            inventoryC.filled[2] = 3;
+            product31.enabled = true;
+            product31.transform.position = inventoryC.slots[2].transform.position;
+            inventoryC.quantity[2] = DetermineQuantity(x,y,1,2);
+        }
+        if (a == 1 && b == 3){ //product 6
+            inventoryC.filled[2] = 6;
+            product61.enabled = true;
+            product61.transform.position = inventoryC.slots[2].transform.position;
+            inventoryC.quantity[2] = DetermineQuantity(x,y,3,1);
+        }
+        if (a == 3 && b == 1){ //product 6
+            inventoryC.filled[2] = 6;
+            product61.enabled = true;
+            product61.transform.position = inventoryC.slots[2].transform.position;
+            inventoryC.quantity[2] = DetermineQuantity(x,y,1,3);
+        }
+        if (a == 3 && b == 4){ //product 4
+            inventoryC.filled[2] = 4;
+            product41.enabled = true;
+            product41.transform.position = inventoryC.slots[2].transform.position;
+            inventoryC.quantity[2] = DetermineQuantity(x,y,2,1);
+        }
+        if (a == 4 && b == 3){ //product 4
+            inventoryC.filled[2] = 4;
+            product41.enabled = true;
+            product41.transform.position = inventoryC.slots[2].transform.position;
+            inventoryC.quantity[2] = DetermineQuantity(x,y,1,2);
+        }
+        if (a == 2 && b == 3){ //product 5
+            inventoryC.filled[2] = 5;
+            product51.enabled = true;
+            product51.transform.position = inventoryC.slots[2].transform.position;
+            inventoryC.quantity[2] = DetermineQuantity(x,y,4,1);
+        }
+        if (a == 3 && b == 2){ //product 5
+            inventoryC.filled[2] = 5;
+            product51.enabled = true;
+            product51.transform.position = inventoryC.slots[2].transform.position;
+            inventoryC.quantity[2] = DetermineQuantity(x,y,1,4);
+        }
+        if ((a == 2 && b == 4) || (a == 4 && b == 2)){ //product 7
+            inventoryC.filled[2] = 7;
+            product71.enabled = true;
+            product71.transform.position = inventoryC.slots[2].transform.position;
+            inventoryC.quantity[2] = DetermineQuantity(x,y,1,1);
+        }
+        if ((a == 1 && b == 2) || (a == 2 && b == 1)){ //product 2
+            inventoryC.filled[2] = 2;
+            product21.enabled = true;
+            product21.transform.position = inventoryC.slots[2].transform.position;
+            inventoryC.quantity[2] = DetermineQuantity(x,y,2,2);
+        }
+
+
+        //update text
+        for (int i = 0; i < inventoryC.slots.Length; i++){
             t = inventoryC.slots[i].transform.GetChild(0).GetChild(0).GetComponentInChildren<Text>();
             if (t) t.text = inventoryC.quantity[i].ToString();
         }
+    }
 
-        //determine product
-        
+    int DetermineQuantity(int x, int y, int rx, int ry){
+        int ret = 0;
+        while (x >= rx && y >= ry){
+            x = x - rx;
+            y = y - ry;
+            ret++;
+        }
+        return ret;
     }
 
     void ResetCrafting(){

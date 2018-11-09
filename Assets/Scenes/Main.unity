@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657856, g: 0.49641234, b: 0.57481724, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -440,7 +440,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 349, y: -437}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &111032446
 MonoBehaviour:
@@ -1823,7 +1823,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 349, y: -437}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &418014756
 MonoBehaviour:
@@ -3211,7 +3211,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 349, y: -437}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &960200095
 MonoBehaviour:
@@ -3350,7 +3350,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 349, y: -437}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &970526630
 MonoBehaviour:
@@ -3920,7 +3920,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 349, y: -437}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1172657532
 MonoBehaviour:
@@ -5142,6 +5142,13 @@ MonoBehaviour:
   product7: {fileID: 1900492027}
   crafting: {fileID: 0}
   craftbutton: {fileID: 0}
+  product11: {fileID: 0}
+  product21: {fileID: 0}
+  product31: {fileID: 0}
+  product41: {fileID: 0}
+  product51: {fileID: 0}
+  product61: {fileID: 0}
+  product71: {fileID: 0}
   prompt: {fileID: 1341739646}
 --- !u!114 &1299030027
 MonoBehaviour:
@@ -6003,7 +6010,7 @@ GameObject:
   - component: {fileID: 1583420083}
   m_Layer: 0
   m_Name: Sphere (3)
-  m_TagString: interactable3
+  m_TagString: interactable4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6069,7 +6076,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1583420078}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.57, y: 0.61, z: -8.49}
+  m_LocalPosition: {x: -0.52, y: 0.76, z: -6.138}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6743,13 +6750,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e65982a9f1164c8e891444fac9ef9ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  filled: 00000000000000000000000000000000
+  filled: 04000000010000000000000000000000
   slots:
   - {fileID: 417737797}
   - {fileID: 1241562938}
   - {fileID: 825602591}
   - {fileID: 2087952571}
-  quantity: 00000000000000000000000000000000
+  quantity: 06000000040000000000000000000000
 --- !u!114 &1747565085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6815,6 +6822,13 @@ MonoBehaviour:
   product7: {fileID: 1900492027}
   crafting: {fileID: 1255066485}
   craftbutton: {fileID: 1229018784}
+  product11: {fileID: 2061444921}
+  product21: {fileID: 418014756}
+  product31: {fileID: 2009834278}
+  product41: {fileID: 111032446}
+  product51: {fileID: 960200095}
+  product61: {fileID: 1172657532}
+  product71: {fileID: 970526630}
   prompt: {fileID: 1341739646}
 --- !u!114 &1747565088
 MonoBehaviour:
@@ -8393,6 +8407,13 @@ MonoBehaviour:
   product7: {fileID: 1900492027}
   crafting: {fileID: 0}
   craftbutton: {fileID: 0}
+  product11: {fileID: 0}
+  product21: {fileID: 0}
+  product31: {fileID: 0}
+  product41: {fileID: 0}
+  product51: {fileID: 0}
+  product61: {fileID: 0}
+  product71: {fileID: 0}
   prompt: {fileID: 1341739646}
 --- !u!114 &1990465487
 MonoBehaviour:
@@ -8848,7 +8869,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 349, y: -437}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2009834278
 MonoBehaviour:
@@ -9015,7 +9036,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 349, y: -437}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2061444921
 MonoBehaviour:
