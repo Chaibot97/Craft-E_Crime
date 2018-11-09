@@ -21,7 +21,7 @@ public class EnemySight : MonoBehaviour {
         countdown = m_DetectedTime;
         speed = GetComponent<FollowPath>().Speed;
     }
-    private void LateUpdate()
+    private void Update()
     {
         Vector3 line1 = transform.position + Quaternion.Euler(0, m_FOV*0.5f, 0)*transform.forward*sCol.radius;
         Debug.DrawLine(transform.position, line1, Color.green);
@@ -34,6 +34,7 @@ public class EnemySight : MonoBehaviour {
         }
         if (seen)
         {
+
             GetComponent<FollowPath>().Speed = 0;
 
         }else{
@@ -44,7 +45,7 @@ public class EnemySight : MonoBehaviour {
   
     void OnTriggerStay(Collider col)
     {
-        seen = false;
+
         if (col.gameObject.tag == "Player")
         {
             Vector3 direction = col.gameObject.transform.position - transform.position;
@@ -56,11 +57,17 @@ public class EnemySight : MonoBehaviour {
                         seen = true;
                         if(countdown>0)
                             countdown--;
+
                         //Debug.Log("seen");
 
                     }
+                }else{
+                    seen = false;
                 }
 
+            }
+            else{
+                seen = false;
             }
             Detectinfo.text = countdown.ToString();
             if (countdown <= 0)
@@ -68,6 +75,8 @@ public class EnemySight : MonoBehaviour {
                 SceneManager.LoadScene("GameOver");
                 Cursor.visible = true;
             }
+            //Debug.Log(seen);
+
 
         }
     }
