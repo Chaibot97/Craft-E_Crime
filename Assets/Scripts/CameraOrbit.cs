@@ -18,7 +18,8 @@ public class CameraOrbit : MonoBehaviour
 
     void LateUpdate()
     {
-        offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * offset;
+        if (Cursor.visible) return;
+		offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * offset;
         offset = Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * -turnSpeed, transform.right) * offset;
         Vector3 newPostion= player.position + offset;
         if (newPostion.y >=0.1f)
