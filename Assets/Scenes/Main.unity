@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657856, g: 0.49641234, b: 0.57481724, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4608,6 +4608,7 @@ MonoBehaviour:
   m_InteractionTime: 100
   cdinfo: {fileID: 1416174032}
   collect: {fileID: 132104461}
+  crafting: {fileID: 181914548}
   object1: {fileID: 31642426}
   object2: {fileID: 297277535}
   object3: {fileID: 1025069920}
@@ -6984,7 +6985,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &1990465479
 Rigidbody:
   m_ObjectHideFlags: 0
