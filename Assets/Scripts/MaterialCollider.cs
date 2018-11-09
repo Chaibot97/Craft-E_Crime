@@ -9,7 +9,10 @@ public class MaterialCollider : MonoBehaviour {
     public Text cdinfo;
     int countdown=0;
 
+    private bool inCraft;
+
     [SerializeField] Image collect;
+    [SerializeField] Image crafting;
 
     private Inventory inventory;
     public Image object1;
@@ -44,10 +47,12 @@ public class MaterialCollider : MonoBehaviour {
         if (product5) product5.transform.SetAsLastSibling();
         if (product6) product6.transform.SetAsLastSibling();
         if (product7) product7.transform.SetAsLastSibling();
+
+        inCraft = false;
     }
 
     private void Update(){
-        
+        if (crafting) crafting.transform.SetAsLastSibling();
     }
 
 
@@ -60,6 +65,9 @@ public class MaterialCollider : MonoBehaviour {
             countdown = m_InteractionTime;
             //prompt.text = "Hold E to interact.";
             prompt.enabled = true;
+        }
+        else if (col.gameObject.tag.Contains("crafting")){
+            crafting.enabled = true;
         }
     }
     void OnTriggerStay(Collider col)
@@ -84,14 +92,15 @@ public class MaterialCollider : MonoBehaviour {
             //Debug.Log(countdown.ToString());
             if (countdown <= 0)
             {
-                Disappear(collect);
                 addToInventory(col.gameObject);
                 Destroy(col.gameObject);
+                Disappear(collect);
                 prompt.enabled = false;
             }
 
         }
     }
+
     void OnTriggerExit(Collider col)
     {
         if (col.gameObject.tag.Contains("interactable"))
@@ -99,6 +108,9 @@ public class MaterialCollider : MonoBehaviour {
             Disappear(collect);
             countdown = m_InteractionTime;
             prompt.enabled = false;
+        }
+        if (col.gameObject.tag.Contains("crafting")){
+            crafting.enabled = false;
         }
     }
     

@@ -11,6 +11,7 @@ TagManager:
   - interactable3
   - interactable4
   - Enemy
+  - crafting
   layers:
   - Default
   - TransparentFX
