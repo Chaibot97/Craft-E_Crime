@@ -39,8 +39,12 @@ public class MaterialCollider : MonoBehaviour {
     public Image product61;
     public Image product71;
 
+    public Image winner;
+    public GameObject restartbutton;
+
     private Text t;
     public Text prompt;
+
     [SerializeField] AudioClip takeItem;
     [SerializeField] AudioClip teleport;
 
@@ -74,6 +78,9 @@ public class MaterialCollider : MonoBehaviour {
 
         inventoryC = GetComponent<InventoryC>();
         EnableCrafting(false);
+
+        restartbutton.SetActive(false);
+        winner.enabled = false;
     }
 
     private void Update(){
@@ -90,11 +97,11 @@ public class MaterialCollider : MonoBehaviour {
     void OnTriggerEnter(Collider col)
     {
 
-        if (col.gameObject.tag.Contains("interactable")|| col.gameObject.tag.Contains("Store"))
+        if (col.gameObject.tag.Contains("interactable") || col.gameObject.tag.Contains("Store") || col.gameObject.tag.Contains("Computer"))
         {
             //Debug.Log(col.gameObject.name);
-            countdown = m_InteractionTime;
             //prompt.text = "Hold E to interact.";
+            countdown = m_InteractionTime;
             prompt.enabled = true;
         }
         else if (col.gameObject.tag.Contains("crafting")){
@@ -104,7 +111,7 @@ public class MaterialCollider : MonoBehaviour {
     void OnTriggerStay(Collider col)
     {
 
-        if (col.gameObject.tag.Contains("interactable"))
+        if (col.gameObject.tag.Contains("interactable") || col.gameObject.tag.Contains("Computer"))
         {
             if (!(Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.Mouse0)))
             {
@@ -123,15 +130,20 @@ public class MaterialCollider : MonoBehaviour {
             //Debug.Log(countdown.ToString());
             if (countdown <= 0)
             {
-                addToInventory(col.gameObject);
-                Destroy(col.gameObject);
+                if (col.gameObject.tag.Contains("interactable")){
+                    addToInventory(col.gameObject);
+                    Destroy(col.gameObject);
+                    GetComponent<AudioSource>().PlayOneShot(takeItem);
+                }
+                if (col.gameObject.tag.Contains("Computer")){
+                    EndGame();
+                }
                 Disappear(collect);
                 prompt.enabled = false;
-                GetComponent<AudioSource>().PlayOneShot(takeItem);
             }
 
-        }else
-        if (col.gameObject.tag.Contains("Store"))
+        }
+        else if (col.gameObject.tag.Contains("Store"))
         {
             if (!(Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.Mouse0)))
             {
@@ -162,7 +174,7 @@ public class MaterialCollider : MonoBehaviour {
 
     void OnTriggerExit(Collider col)
     {
-        if (col.gameObject.tag.Contains("interactable")|| col.gameObject.tag.Contains("Store"))
+        if (col.gameObject.tag.Contains("interactable") || col.gameObject.tag.Contains("Store") || col.gameObject.tag.Contains("Computer"))
         {
             Disappear(collect);
             countdown = m_InteractionTime;
@@ -523,6 +535,13 @@ public class MaterialCollider : MonoBehaviour {
         }
         craftbutton.SetActive(b);
         isCrafting = b;
+        Cursor.visible = b;
         if (!b){ ResetCrafting(); }
+    }
+
+    void EndGame(){
+        if (winner) winner.enabled = true;
+        restartbutton.SetActive(true);
+        Cursor.visible = true;
     }
 }
