@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 m_Move;
     private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
     private bool m_Sprint;
+    private Animator anim;
 
     [SerializeField] Image shoppinglist;
     [SerializeField] Image tabshop;
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour
 
         shoppinglist.enabled = false;
         tabshop.enabled = true;
+        anim = gameObject.GetComponent<Animator>();
     }
 
 
@@ -66,6 +68,13 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKey(KeyCode.D))
             {
                 x += 1;
+            }
+            if (z != 0 && x != 0) {
+                anim.Play("playerrun");
+            }
+            else
+            {
+                anim.Play("playeridle");
             }
         }
 

@@ -21,6 +21,7 @@ public class FollowPath : MonoBehaviour
 
     #region Private Variables
     private IEnumerator<Transform> pointInPath; //Used to reference points returned from MyPath.GetNextPathPoint
+    private Animator anim;
     #endregion //Private Variables
 
     // (Unity Named Methods)
@@ -51,7 +52,8 @@ public class FollowPath : MonoBehaviour
 
         //Set the position of this object to the position of our starting point
         transform.position = pointInPath.Current.position;
-
+        anim = gameObject.GetComponent<Animator>();
+        anim.Play("workerwalk");
     }
      
     //Update is called by Unity every frame
