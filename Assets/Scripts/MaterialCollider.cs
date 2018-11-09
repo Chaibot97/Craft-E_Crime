@@ -70,6 +70,7 @@ public class MaterialCollider : MonoBehaviour {
         else if (col.gameObject.tag.Contains("crafting")){
             EnableCrafting(true);
         }
+        addToInventory2(1);
     }
     void OnTriggerStay(Collider col)
     {
