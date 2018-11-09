@@ -28,6 +28,7 @@ public class MaterialCollider : MonoBehaviour {
 
     public Image crafting;
     private InventoryC inventoryC;
+    public GameObject craftbutton;
 
     private Text t;
     public Text prompt;
@@ -54,6 +55,11 @@ public class MaterialCollider : MonoBehaviour {
 
     private void Update(){
         if (crafting) crafting.transform.SetAsLastSibling();
+        if (craftbutton) craftbutton.transform.SetAsLastSibling();
+
+        if (crafting){
+            //TODO
+        }
     }
 
 
@@ -224,5 +230,6 @@ public class MaterialCollider : MonoBehaviour {
         for (int i = 0; i < inventoryC.slots.Length; i++){
             inventoryC.slots[i].SetActive(b);
         }
+        craftbutton.SetActive(b);
     }
 }
