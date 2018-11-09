@@ -1,5 +1,4 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
 <<<<<<< HEAD
 guid: dde11dc07fd2c4f679ae17fb93d808af
 =======
@@ -9,9 +8,6 @@ guid: 231a694c92bcf48359f4bc857ab69c9d
 guid: 0996e01efe4d9d54db1a62913b28526a
 >>>>>>> Stashed changes
 >>>>>>> master
-=======
-guid: 231a694c92bcf48359f4bc857ab69c9d
->>>>>>> Stashed changes
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
@@ -19,7 +15,7 @@ TextureImporter:
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
-    sRGBTexture: 0
+    sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
@@ -63,7 +59,7 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 0
   spriteTessellationDetail: -1
-  textureType: 1
+  textureType: 0
   textureShape: 1
   singleChannelComponent: 0
   maxTextureSizeSet: 0
