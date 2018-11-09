@@ -9,10 +9,7 @@ public class MaterialCollider : MonoBehaviour {
     public Text cdinfo;
     int countdown=0;
 
-    private bool inCraft;
-
     [SerializeField] Image collect;
-    [SerializeField] Image crafting;
 
     private Inventory inventory;
     public Image object1;
@@ -28,6 +25,9 @@ public class MaterialCollider : MonoBehaviour {
     public Image product5;
     public Image product6;
     public Image product7;
+
+    public Image crafting;
+    private InventoryC inventoryC;
 
     private Text t;
     public Text prompt;
@@ -48,7 +48,8 @@ public class MaterialCollider : MonoBehaviour {
         if (product6) product6.transform.SetAsLastSibling();
         if (product7) product7.transform.SetAsLastSibling();
 
-        inCraft = false;
+        inventoryC = GetComponent<InventoryC>();
+        EnableCrafting(false);
     }
 
     private void Update(){
@@ -67,7 +68,7 @@ public class MaterialCollider : MonoBehaviour {
             prompt.enabled = true;
         }
         else if (col.gameObject.tag.Contains("crafting")){
-            crafting.enabled = true;
+            EnableCrafting(true);
         }
     }
     void OnTriggerStay(Collider col)
@@ -110,7 +111,7 @@ public class MaterialCollider : MonoBehaviour {
             prompt.enabled = false;
         }
         if (col.gameObject.tag.Contains("crafting")){
-            crafting.enabled = false;
+            EnableCrafting(false);
         }
     }
     
@@ -215,6 +216,13 @@ public class MaterialCollider : MonoBehaviour {
         for (int i = 0; i < inventory2.slots.Length; i++){
             t = inventory2.slots[i].transform.GetChild(0).GetChild(0).GetComponentInChildren<Text>();
             if (t) t.text = inventory2.quantity[i].ToString();
+        }
+    }
+
+    void EnableCrafting(bool b){
+        if (crafting) crafting.enabled = b;
+        for (int i = 0; i < inventoryC.slots.Length; i++){
+            inventoryC.slots[i].SetActive(b);
         }
     }
 }
