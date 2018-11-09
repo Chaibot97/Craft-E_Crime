@@ -33,7 +33,8 @@ public class MaterialCollider : MonoBehaviour {
 
     private Text t;
     public Text prompt;
-
+    [SerializeField] AudioClip takeItem;
+    [SerializeField] AudioClip teleport;
     private void Start(){
         inventory = GetComponent<Inventory>();
         if (object1) object1.transform.SetAsLastSibling();
@@ -105,6 +106,7 @@ public class MaterialCollider : MonoBehaviour {
                 Destroy(col.gameObject);
                 Disappear(collect);
                 prompt.enabled = false;
+                GetComponent<AudioSource>().PlayOneShot(takeItem);
             }
 
         }else
@@ -131,6 +133,7 @@ public class MaterialCollider : MonoBehaviour {
                 GameObject.Find("Canvas").GetComponent<Transition>().putMask();
                 prompt.enabled = false;
                 Disappear(collect);
+                GetComponent<AudioSource>().PlayOneShot(teleport);
             }
         }
 
