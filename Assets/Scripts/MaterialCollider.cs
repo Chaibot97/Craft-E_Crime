@@ -49,7 +49,7 @@ public class MaterialCollider : MonoBehaviour {
 
     [SerializeField] AudioClip takeItem;
     [SerializeField] AudioClip teleport;
-    [SerializeField] AudioClip craftingBGM;
+    //[SerializeField] AudioClip craftingBGM;
 
     private void Start(){
         inventory = GetComponent<Inventory>();
@@ -170,8 +170,8 @@ public class MaterialCollider : MonoBehaviour {
                 prompt.enabled = false;
                 Disappear(collect);
                 GetComponent<AudioSource>().PlayOneShot(teleport);
-                GetComponents<AudioSource>()[1].clip=craftingBGM;
-                GetComponents<AudioSource>()[1].PlayOneShot(craftingBGM);
+                //GetComponents<AudioSource>()[1].clip=craftingBGM;
+                //GetComponents<AudioSource>()[1].PlayOneShot(craftingBGM);
             }
         }
 
